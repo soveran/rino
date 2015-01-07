@@ -1,0 +1,34 @@
+rino -- Remove files by inode number
+
+Description
+-----------
+
+Remove the files in the current directory
+that refer to a given inode number.
+
+Example
+-------
+
+If you have a file that can't be removed by
+name, you can try this:
+
+	$ ls -i
+	3090810 foo	3085281 ?
+
+Once you get the inode number for the file you want
+to delete, use find to remove it:
+
+	$ find . -inum 3085281 -exec rm '{}' ';'
+
+Instead of using find, you can use `rino`:
+
+	$ rino 3085281
+
+Installation
+------------
+
+Grab `rino`, then run:
+
+	$ make rino
+
+Copy the executable anywhere in your path.
