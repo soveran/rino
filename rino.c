@@ -4,6 +4,7 @@
 #include <string.h>
 #include <dirent.h>
 #include <unistd.h>
+#include <sys/stat.h>
 
 int main(int argc, char **argv) {
 	if (argc != 2) {
